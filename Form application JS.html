@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-sclae=1.0">
+    <title>Application Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="karl.css">
+
+<script  type="text/javascript" src="script.js"></script>
+
+</head>
+
+
+
+<body>
+
+    
+
+    <form name="myform" method="post" onSubmit="return validate()">
+        <div class="form-control">
+        <h2>Register</h2>
+        
+<div id ="message"></div>
+<label for="fname">Full Name</label>
+            <input type=text name="fname" placeholder="Full Name">
+            
+       <br><br>
+       <label for="fname">Email</label>
+                    <input type=text name="email" placeholder=" Email">
+                    
+        
+
+            <br><br>
+        
+            <label for="pass">Password</label>
+                    <input type=text name="password" placeholder="Password">
+                    
+        
+
+            <br><br> 
+        
+            <label for="password2">Password Again</label>
+                    <input type=password name="password2" placeholder="Enter Password again">
+                    
+        <br><br>
+
+            
+        
+        <label for="phone">Phone</label>
+                    <input type=tel name="phone" placeholder="Phone" >
+              
+
+            <br><br>
+        
+            <label for="country">Country</label>
+                    <select name="country">Country
+                        <option value="select">Select</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
+                        <option value="France">France</option>
+                    </select>
+                    
+                    <br><br>
+        
+
+                <button>Submit</button>
+                 <br><br>
+
+
+
+    </form>
+
+</div>
+
+
+    </body>
+
+    <script type="text/javascript ">
+
+function validate(){
+    var fname=document.forms["myform"]["fname"].value;
+    var email=document.forms["myform"]["email"].value;
+    var password=document.forms["myform"]["password"].value;
+    var password2=document.forms["myform"]["password2"].value;
+    var phone =document.forms["myform"]["phone"].value;
+    var country=document.forms["myform"]["country"].value;
+
+    if(fname==""){
+        alert("Enter your name please");
+        return false;
+    }
+
+    var at = email.indexOf("@");
+    var dot=email.lastIndexOf(".");
+    if(at<1||dot<at+2||dot+2>=email/length){
+        alert("Enter a valid email");
+        return false;
+    }
+
+    if(phone==""){
+        alert("Enter your phone number");
+        return false;
+    }
+
+    if(isNaN(phone)){
+        alert("Phone should be in digit");
+        return false;
+    }
+
+    if(phone.length!=11){
+        alert("Phone number must be 11 digits");
+        return false;
+    }
+
+    if(password.length<8){
+        alert("Password must be 8 characters min");
+        return false;
+    }
+
+    if(password2.length<8){
+        alert("Password must match");
+        return false;
+    }
+
+    if(country=="Select a country"){
+        alert("Select a country");
+        return false;
+    }
+
+
+}
+
+
+
+    </script>
+
+    
+
+     
+         
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        
+    
